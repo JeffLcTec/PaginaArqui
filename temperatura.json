@@ -1,47 +1,52 @@
 {
     "datos_ultimos_7_dias": [
-      {
-        "dia": "2024-09-13",
-        "hora": "08:30",
-        "temperatura": 28.5,
-        "humedad": 65
-      },
-      {
-        "dia": "2024-09-14",
-        "hora": "09:15",
-        "temperatura": 29.0,
-        "humedad": 67
-      },
-      {
-        "dia": "2024-09-15",
-        "hora": "08:45",
-        "temperatura": 27.8,
-        "humedad": 70
-      },
-      {
-        "dia": "2024-09-16",
-        "hora": "10:00",
-        "temperatura": 28.2,
-        "humedad": 72
-      },
-      {
-        "dia": "2024-09-17",
-        "hora": "08:50",
-        "temperatura": 30.1,
-        "humedad": 68
-      },
-      {
-        "dia": "2024-09-18",
-        "hora": "09:10",
-        "temperatura": 29.4,
-        "humedad": 66
-      },
-      {
-        "dia": "2024-09-19",
-        "hora": "08:40",
-        "temperatura": 28.0,
-        "humedad": 64
-      }
+        {
+            "dia": "2024-09-13",
+            "hora": "08:30",
+            "temperatura": 28.5,
+            "humedad": 65
+        },
+        {
+            "dia": "2024-09-14",
+            "hora": "09:15",
+            "temperatura": 29.0,
+            "humedad": 67
+        },
+        {
+            "dia": "2024-09-15",
+            "hora": "08:45",
+            "temperatura": 27.8,
+            "humedad": 70
+        },
+        {
+            "dia": "2024-09-16",
+            "hora": "10:00",
+            "temperatura": 28.2,
+            "humedad": 72
+        },
+        {
+            "dia": "2024-09-17",
+            "hora": "08:50",
+            "temperatura": 30.1,
+            "humedad": 68
+        },
+        {
+            "dia": "2024-09-18",
+            "hora": "09:10",
+            "temperatura": 29.4,
+            "humedad": 66
+        },
+        {
+            "dia": "2024-09-19",
+            "hora": "08:40",
+            "temperatura": 28.0,
+            "humedad": 64
+        },
+        {
+            "dia": "2024-09-22",
+            "hora": "23:46",
+            "temperatura": 25.3,
+            "humedad": 60
+        }
     ]
-  }
-  
+}
