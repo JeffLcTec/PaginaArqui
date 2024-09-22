@@ -5,7 +5,6 @@ from datetime import datetime
 st.write("Roberto Carepicha")
 archivo = pd.read_json("temperatura.json")
 
-
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
 
 # Filtrar solo la columna 'dia' para mostrar solo las fechas
