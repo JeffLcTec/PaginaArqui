@@ -11,13 +11,9 @@ st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperat
 st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal de monitoreo en tiempo real</h3>", unsafe_allow_html=True)
 
 # Imagen o ícono decorativo
-st.markdown(
-    """
-    <div style="display: flex; justify-content: center;">
-        <img src="TecLogo.png" width="400">
-    </div>
-    """, unsafe_allow_html=True
-)
+col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
+with col2:
+    st.image("TecLogo.png", caption="Logo del ITCR", width=300) 
 
 # Botón de ingreso
 if st.button('Ver Datos'):
