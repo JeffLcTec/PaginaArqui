@@ -6,7 +6,7 @@ from datetime import datetime
 # Configuración de página principal
 col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
 with col2:
-    st.image("TecLogo.png", width=300) 
+    st.image("TecLogo.png", width=250) 
 
 
 # Diseño de la página principal
