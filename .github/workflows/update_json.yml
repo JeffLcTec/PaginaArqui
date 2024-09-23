@@ -6,11 +6,11 @@ on:
 
 jobs:
   update-json:
-    runs-on: ubuntu-latest  # Corre en la nube
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository content
-      uses: actions/checkout@v2  # Clona el contenido del repositorio
+      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -25,15 +25,6 @@ jobs:
       run: |
         python update_json.py
 
-    - name: Stash local changes
-      run: git stash
-
-    - name: Pull changes from remote repository
-      run: git pull https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main
-
-    - name: Apply stashed changes
-      run: git stash pop
-
     - name: Set up Git config
       run: |
         git config --global user.name 'github-actions'
@@ -45,4 +36,4 @@ jobs:
       run: |
         git add temperatura.json
         git commit -m "Actualizar archivo JSON automáticamente"
-        git push https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main
+        git push https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main --force
