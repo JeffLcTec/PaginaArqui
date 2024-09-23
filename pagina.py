@@ -13,7 +13,7 @@ st.markdown(
     """
     <style>
     .titulo {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Lobster', cursive;
         font-size: 48px;
         text-align: center;
     }
