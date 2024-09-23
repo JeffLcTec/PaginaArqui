@@ -6,7 +6,7 @@ st.write("Roberto Carepicha")
 archivo = pd.read_json("temperatura.json")
 
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
-col1,col2,col3= st.columns([4, 2, 1])
+col1,col2,col3= st.columns([4, 2, 3])
 opciones= ['Promedio por rango de dias','Fuap','Promedio por hora']
 with col1:
     Opcion = st.selectbox("Seleccionar Opcion", opciones)
