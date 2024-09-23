@@ -12,10 +12,14 @@ with col2:
 st.markdown(
     """
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
     .titulo {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 48px;
+        font-weight: 900;  /* Fuente gruesa */
         text-align: center;
+        color: #333;
     }
     </style>
     <div class="titulo">
