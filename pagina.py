@@ -9,14 +9,11 @@ with col2:
     st.image("TecLogo.png", width=250) 
 
 
-# Diseño de la página principal
-st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperatura y Humedad</h1>", unsafe_allow_html=True)
-
 st.markdown(
     """
     <style>
     .titulo {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 48px;
         text-align: center;
     }
