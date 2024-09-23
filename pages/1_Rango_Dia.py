@@ -18,13 +18,11 @@ fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_df)
 on = st.toggle("Ver Promedio")
 
 if on:
-   st.write("Jue que pichudo mae") 
-    
+
     # Convertir las fechas seleccionadas a formato datetime
    fecha_inicio = pd.to_datetime(fecha_inicio).date()
    fecha_fin = pd.to_datetime(fecha_fin).date()
     
-   st.write(f"Rango de fechas: {fecha_inicio} - {fecha_fin}")
     
     # Convertir la columna 'dia' a datetime para poder filtrar
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
@@ -72,8 +70,6 @@ else:
            fecha_inicio = pd.to_datetime(fecha_inicio).date()
            fecha_fin = pd.to_datetime(fecha_fin).date()
               
-           st.write(f"Rango de fechas: {fecha_inicio} - {fecha_fin}")
-      
            
               # Convertir la columna 'dia' a datetime para poder filtrar
            datos['dia'] = pd.to_datetime(datos['dia']).dt.date
