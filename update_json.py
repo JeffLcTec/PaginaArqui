@@ -15,7 +15,7 @@ nuevo_dato = {
     "dia": datetime.now().strftime("%Y-%m-%d"),
     "hora": datetime.now().strftime("%H:%M"),
     "temperatura": 25.3,
-    "humedad": 70
+    "humedad": 60
 }
 lista_datos.append(nuevo_dato)
 
