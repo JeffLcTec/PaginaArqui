@@ -11,6 +11,22 @@ with col2:
 
 # Diseño de la página principal
 st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperatura y Humedad</h1>", unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <style>
+    .titulo {
+        font-family: 'Arial', sans-serif;
+        font-size: 48px;
+        text-align: center;
+    }
+    </style>
+    <div class="titulo">
+        Monitoreo de Temperatura y Humedad
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal de monitoreo en tiempo real</h3>", unsafe_allow_html=True)
 
 # Imagen o ícono decorativo
