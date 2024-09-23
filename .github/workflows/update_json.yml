@@ -2,7 +2,7 @@ name: Actualizar archivo JSON
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Ejecuta cada 2 minutos
+    - cron: '*/5 * * * *'  # Ejecuta cada 2 minutos
  
 
 jobs:
