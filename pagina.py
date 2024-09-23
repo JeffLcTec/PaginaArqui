@@ -8,7 +8,6 @@ col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
 with col2:
     st.image("TecLogo.png", width=300) 
 
-st.title("Monitoreo de Temperatura y Humedad")
 
 # Diseño de la página principal
 st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperatura y Humedad</h1>", unsafe_allow_html=True)
