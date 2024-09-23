@@ -5,7 +5,7 @@ from datetime import datetime
 st.write('# Promedio por Rango Dias')
 archivo = pd.read_json("temperatura.json")
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
-fechas_df = datos[['dia']]
+fechas_df = datos['dia']
    
    
    
@@ -57,9 +57,7 @@ if on:
 else:
    if fecha_inicio and fecha_fin:
        try:
-           # Dividir la cadena en dos partes (antes y después del guion '-')
-          
-              
+         
            fecha_inicio = pd.to_datetime(fecha_inicio).date()
            fecha_fin = pd.to_datetime(fecha_fin).date()
               
