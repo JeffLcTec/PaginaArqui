@@ -19,7 +19,7 @@ st.markdown(
         font-size: 48px;
         font-weight: 900;  /* Fuente gruesa */
         text-align: center;
-        color: #333;
+        color: "white";
     }
     </style>
     <div class="titulo">
