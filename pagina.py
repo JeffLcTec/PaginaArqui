@@ -11,7 +11,13 @@ st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperat
 st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal de monitoreo en tiempo real</h3>", unsafe_allow_html=True)
 
 # Imagen o ícono decorativo
-st.image("TecLogo.png", width=300)
+st.markdown(
+    """
+    <div style="display: flex; justify-content: center;">
+        <img src="TecLogo.png" width="400">
+    </div>
+    """, unsafe_allow_html=True
+)
 
 # Botón de ingreso
 if st.button('Ver Datos'):
