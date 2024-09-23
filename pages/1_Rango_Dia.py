@@ -15,9 +15,10 @@ fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", fechas_df)
    # Cuadro de selección para Fecha de Fin
 fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_df)
    
-   # Mostrar las fechas seleccionadas
-   
-   
+on = st.toggle("Activate feature")
+
+if on:
+    st.write("Jue que pichudo mae") 
     # Dividir la cadena en dos partes (antes y después del guion '-')
 if fecha_inicio and fecha_fin:
     try:
