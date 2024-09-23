@@ -48,7 +48,7 @@ if on:
             title=f"Temperatura Promedio desde {fecha_inicio} hasta {fecha_fin}",
             xaxis_title="Fecha",
             yaxis_title="Temperatura (°C)",
-            height=350,
+            height=400,
             xaxis_tickformat='%Y-%m-%d',
             xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
          ) 
