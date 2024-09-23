@@ -44,7 +44,14 @@ if on:
     # Añadir la línea de temperaturas
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],
                            mode='lines+markers', name='Temperatura'))
-    
+   fig.update_layout(
+            title=f"Temperatura Promedio desde {fecha_inicio} hasta {fecha_fin}",
+            xaxis_title="Fecha",
+            yaxis_title="Temperatura (°C)",
+            height=350,
+            xaxis_tickformat='%Y-%m-%d',
+            xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
+         ) 
     # Añadir la línea del promedio
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
                            mode='lines', line=dict(dash='dash', color='red'),
