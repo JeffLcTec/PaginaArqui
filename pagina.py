@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
-st.write("Roberto Carepicha")
+st.write("# Roberto Carepicha")
 archivo = pd.read_json("temperatura.json")
 
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
