@@ -15,7 +15,7 @@ fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", fechas_df)
    # Cuadro de selección para Fecha de Fin
 fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_df)
    
-on = st.toggle("Activate feature")
+on = st.toggle("Ver Promedio")
 
 if on:
     st.write("Jue que pichudo mae") 
