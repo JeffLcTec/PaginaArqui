@@ -6,7 +6,8 @@ st.write("Roberto Carepicha")
 archivo = pd.read_json("temperatura.json")
 
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
-
+opciones= [['Rango de dias'],['Fuap']]
+Opcion = st.selectbox("Seleccionar Opcion", opciones)
 # Filtrar solo la columna 'dia' para mostrar solo las fechas
 fechas_df = datos[['dia']]
 
