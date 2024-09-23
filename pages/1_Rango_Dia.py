@@ -19,6 +19,41 @@ on = st.toggle("Ver Promedio")
 
 if on:
     st.write("Jue que pichudo mae") 
+   # Crear el gráfico de las temperaturas en el tiempo
+   fecha_inicio = pd.to_datetime(fecha_inicio).date()
+   fecha_fin = pd.to_datetime(fecha_fin).date()
+              
+   st.write(f"Rango de fechas: {fecha_inicio} - {fecha_fin}")
+      
+           
+              # Convertir la columna 'dia' a datetime para poder filtrar
+   datos['dia'] = pd.to_datetime(datos['dia']).dt.date
+          
+   datos['temperatura'] = datos['temperatura'].astype(float)   
+          
+   datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
+          
+   promedio_temperatura = datos_filtrados['temperatura'].mean() 
+   fig = go.Figure()
+   
+   # Añadir la línea de temperaturas
+   fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],
+                            mode='lines+markers', name='Temperatura'))
+   
+   # Añadir la línea de promedio
+   fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
+                            mode='lines', line=dict(dash='dash', color='red'),
+                            name=f"Promedio: {promedio_temperatura:.2f} °C"))
+   
+   # Añadir título y etiquetas
+   fig.update_layout(
+       title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
+       xaxis_title="Fecha",
+       yaxis_title="Temperatura (°C)"
+   )
+   
+   # Mostrar el gráfico en Streamlit o como gráfico interactivo
+   fig.show()
 else:
    if fecha_inicio and fecha_fin:
        try:
@@ -33,9 +68,12 @@ else:
            
               # Convertir la columna 'dia' a datetime para poder filtrar
            datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-              
+          
+           datos['temperatura'] = datos['temperatura'].astype(float)   
+          
            datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
-      
+          
+           promedio_temperatura = datos_filtrados['temperatura'].mean() 
              
               # Gráfico de Temperatura
            fig_temp = go.Figure()
