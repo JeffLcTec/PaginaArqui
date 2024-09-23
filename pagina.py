@@ -4,6 +4,10 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 # Configuración de página principal
+col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
+with col2:
+    st.image("TecLogo.png", width=300) 
+
 st.set_page_config(page_title="Monitoreo de Temperatura y Humedad", layout="centered")
 
 # Diseño de la página principal
@@ -11,9 +15,6 @@ st.markdown("<h1 style='text-align: center; color: white;'>Monitoreo de Temperat
 st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal de monitoreo en tiempo real</h3>", unsafe_allow_html=True)
 
 # Imagen o ícono decorativo
-col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
-with col2:
-    st.image("TecLogo.png", width=300) 
 
 # Botón de ingreso
 if st.button('Ver Datos'):
