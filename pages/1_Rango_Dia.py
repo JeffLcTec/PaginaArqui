@@ -21,44 +21,44 @@ if on:
    st.write("Jue que pichudo mae") 
     
     # Convertir las fechas seleccionadas a formato datetime
-    fecha_inicio = pd.to_datetime(fecha_inicio).date()
-    fecha_fin = pd.to_datetime(fecha_fin).date()
+   fecha_inicio = pd.to_datetime(fecha_inicio).date()
+   fecha_fin = pd.to_datetime(fecha_fin).date()
     
-    st.write(f"Rango de fechas: {fecha_inicio} - {fecha_fin}")
+   st.write(f"Rango de fechas: {fecha_inicio} - {fecha_fin}")
     
     # Convertir la columna 'dia' a datetime para poder filtrar
-    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
+   datos['dia'] = pd.to_datetime(datos['dia']).dt.date
     
     # Convertir la columna 'temperatura' a tipo float
-    datos['temperatura'] = datos['temperatura'].astype(float)
+   datos['temperatura'] = datos['temperatura'].astype(float)
     
     # Filtrar los datos según el rango de fechas
-    datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
+   datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
     
     # Calcular el promedio de temperatura en el rango de fechas
-    promedio_temperatura = datos_filtrados['temperatura'].mean()
+   promedio_temperatura = datos_filtrados['temperatura'].mean()
     
     # Crear la figura del gráfico
-    fig = go.Figure()
+   fig = go.Figure()
     
     # Añadir la línea de temperaturas
-    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],
-                             mode='lines+markers', name='Temperatura'))
+   fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],
+                           mode='lines+markers', name='Temperatura'))
     
     # Añadir la línea del promedio
-    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
-                             mode='lines', line=dict(dash='dash', color='red'),
-                             name=f"Promedio: {promedio_temperatura:.2f} °C"))
+   fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
+                           mode='lines', line=dict(dash='dash', color='red'),
+                           name=f"Promedio: {promedio_temperatura:.2f} °C"))
     
     # Añadir título y etiquetas
-    fig.update_layout(
-        title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
-        xaxis_title="Fecha",
-        yaxis_title="Temperatura (°C)"
-    )
+   fig.update_layout(
+      title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
+      xaxis_title="Fecha",
+      yaxis_title="Temperatura (°C)"
+   )
     
     # Mostrar el gráfico en Streamlit
-    st.plotly_chart(fig)
+   st.plotly_chart(fig)
 else:
    if fecha_inicio and fecha_fin:
        try:
