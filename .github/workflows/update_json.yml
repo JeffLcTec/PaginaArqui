@@ -2,12 +2,11 @@ name: Actualizar archivo JSON
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Ejecuta cada 2 minutos
- 
+    - cron: '*/5 * * * *'  # Ejecuta cada 5 minutos
 
 jobs:
   update-json:
-    runs-on: ubuntu-latest  # Aquí no importa tu sistema operativo, esto corre en la nube
+    runs-on: ubuntu-latest  # Corre en la nube
 
     steps:
     - name: Checkout repository content
@@ -16,27 +15,33 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'  # Instala la versión de Python
+        python-version: '3.x'
 
-    - name: Install dependencies (optional)
+    - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Instala las dependencias si las tienes en requirements.txt
+        pip install -r requirements.txt
 
     - name: Run update script
       run: |
-        python update_json.py  # Ejecuta el script Python para actualizar el archivo JSON
+        python update_json.py
+
+    - name: Stash local changes
+      run: git stash
+
+    - name: Pull changes from remote repository
+      run: git pull https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main
+
+    - name: Apply stashed changes
+      run: git stash pop
 
     - name: Set up Git config
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
 
-    - name: Pull changes from remote repository
-      run: git pull https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main
-
     - name: Commit and push changes
       env:
-        GH_PAT: ${{ secrets.GH_PAT }}  # Asegúrate de haber configurado un Personal Access Token (PAT) en los secrets
+        GH_PAT: ${{ secrets.GH_PAT }}
       run: |
         git add temperatura.json
         git commit -m "Actualizar archivo JSON automáticamente"
