@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.write('#Promedio por Rango Dias')
+st.write('# Promedio por Rango Dias')
