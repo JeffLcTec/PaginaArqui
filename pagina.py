@@ -13,7 +13,7 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 # Imagen o ícono decorativo
 col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
 with col2:
-    st.image("TecLogo.png", caption="Logo del ITCR", width=300) 
+    st.image("TecLogo.png", width=300) 
 
 # Botón de ingreso
 if st.button('Ver Datos'):
