@@ -61,7 +61,7 @@ if fecha_inicio and fecha_fin:
         )
    
            # Mostrar los gráficos en Streamlit
-        st.bar_chart(fig_temp)
+        st.plotly_chart(fig_temp)
         st.plotly_chart(fig_humedad)
     except Exception as e:
         st.error(f"Error al procesar el rango de fechas: {e}")
