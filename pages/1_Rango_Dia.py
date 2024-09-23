@@ -43,7 +43,7 @@ if on:
     
     # Añadir la línea de temperaturas
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],
-                           mode='lines', name='Temperatura'))
+                           mode='lines+markers', name='Temperatura'))
     
     # Añadir la línea del promedio
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
