@@ -35,28 +35,6 @@ st.markdown("<br><br><br>", unsafe_allow_html=True)  # Añadir saltos de línea
 
 col1, col2, col3 = st.columns([1, 2, 1])
 
-# Definir el estilo CSS para los botones
-st.markdown("""
-    <style>
-    .stButton>button {
-        font-family: 'Arial Black', sans-serif;
-        background-color: #1e3f7d; /* Cambiar color de fondo */
-        color: white; /* Color del texto */
-        font-size: 20px; /* Cambiar tamaño del texto */
-        padding: 30px 15px; /* Tamaño del botón */
-        border-radius: 12px; /* Bordes redondeados */
-        border: none; /* Sin borde */
-        margin-top: 20px; /* Espaciado superior */
-        cursor: pointer;
-    }
-
-    .stButton button:hover {
-        background-color: #2653a9; /* Color al pasar el mouse por encima */
-    }
-""", unsafe_allow_html=True)
-
-# Mostrar el botón modificado
-
 
 # Botón de ingreso
 with col1:
