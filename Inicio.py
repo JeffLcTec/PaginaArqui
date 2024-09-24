@@ -40,7 +40,7 @@ st.markdown("""
     <style>
 
     .stButton>button {
-        font-family: 'Arial Black', sans-serif; 
+        font-family: 'Impact', sans-serif; 
         background-color: #1e3f7d; /* Cambiar color de fondo */
         color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
