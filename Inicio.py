@@ -38,8 +38,10 @@ col1, col2, col3 = st.columns([1, 2, 1])
 # Definir el estilo CSS para los botones
 st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+    
     .stButton button {
-        font-family: 'Montserrat', sans-serif;  /* Cambia la fuente a Montserrat */
+        font-family: 'Montserrat', sans-serif; 
         background-color: #1e3f7d; /* Cambiar color de fondo */
         color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
