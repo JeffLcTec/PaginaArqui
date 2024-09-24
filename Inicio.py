@@ -53,8 +53,6 @@ st.markdown("""
     .stButton button:hover {
         background-color: #45a049; /* Color al pasar el mouse por encima */
     }
-    </style>
-    <button class="custom-button">Ver Promedio-Dias</button>
 """, unsafe_allow_html=True)
 
 # Mostrar el botón modificado
