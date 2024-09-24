@@ -15,7 +15,7 @@ response = requests.get(url)
 if response.status_code == 200:
     # Convertimos la respuesta en formato JSON a un diccionario de Python
     data = response.json()
-    for registro in data['feeds']:
-        print(registro)
+    with open('temperatura.json', 'w') as archivo_json:
+    json.dump(data, archivo_json, indent=4)  # `indent` es para formatear el JSON con indentación
 else:
     print(f"Error al obtener los datos: {response.status_code}")
