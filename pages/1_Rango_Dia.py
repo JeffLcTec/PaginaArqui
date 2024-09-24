@@ -2,8 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
+import json
 st.write('# Promedio por Rango Dias')
-archivo = pd.read_json("temperatura.json")
+with open("temperatura.json", "r") as archivo_json:
+    archivo = json.load(archivo_json)
 datos = pd.json_normalize(archivo['feeds'])
 fechas_df = datos[['created_at']]
    
