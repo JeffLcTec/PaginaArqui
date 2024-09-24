@@ -39,7 +39,7 @@ col1, col2, col3 = st.columns([1, 2, 1])
 st.markdown("""
     <style>
 
-    .stButton button {
+    .stButton>button {
         font-family: 'Arial Black', sans-serif; 
         background-color: #1e3f7d; /* Cambiar color de fondo */
         color: white; /* Color del texto */
