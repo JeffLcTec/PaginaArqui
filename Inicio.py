@@ -39,7 +39,7 @@ col1, col2, col3 = st.columns([1, 2, 1])
 st.markdown("""
     <style>
     .stButton button {
-        background-color: #29519f; /* Cambiar color de fondo */
+        background-color: #21478e; /* Cambiar color de fondo */
         color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
         padding: 10px 24px; /* Tamaño del botón */
