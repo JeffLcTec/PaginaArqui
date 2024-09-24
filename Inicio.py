@@ -40,7 +40,7 @@ st.markdown("""
     <style>
     .stButton button {
         background-color: #1e3f7d; /* Cambiar color de fondo */
-        color: white; /* Color del texto */
+        color: red; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
         padding: 10px 24px; /* Tamaño del botón */
         border-radius: 12px; /* Bordes redondeados */
