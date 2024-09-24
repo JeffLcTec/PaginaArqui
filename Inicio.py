@@ -33,11 +33,12 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 # Imagen o ícono decorativo
 
 # Botón de ingreso
-if st.button('Ver Promedio-Dias'):
-    st.switch_page("pages/1_Rango_Dia.py")
-    
-if st.button('Ver Promedio-Horas'):
-    st.switch_page("pages/2_Promedio_Hora.py")
+with col1:
+    if st.button('Ver Promedio-Dias'):
+        st.switch_page("pages/1_Rango_Dia.py")
+with col3:
+    if st.button('Ver Promedio-Horas'):
+        st.switch_page("pages/2_Promedio_Hora.py")
 # Estilo CSS personalizado para darle un toque adicional
 st.markdown("""
     <style>
