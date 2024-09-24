@@ -23,7 +23,7 @@ jobs:
 
     - name: Run update script
       run: |
-        python update_json.py
+        python extraerdatos.py
 
     - name: Set up Git config
       run: |
@@ -34,6 +34,5 @@ jobs:
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
       run: |
-        git add temperatura.json
         git commit -m "Actualizar archivo JSON automáticamente"
         git push https://${{ secrets.GH_PAT }}@github.com/JeffLcTec/PaginaArqui.git main --force
