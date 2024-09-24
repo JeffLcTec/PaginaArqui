@@ -34,6 +34,30 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 st.markdown("<br><br><br>", unsafe_allow_html=True)  # Añadir saltos de línea
 
 col1, col2, col3 = st.columns([1, 2, 1])
+
+# Definir el estilo CSS para los botones
+st.markdown("""
+    <style>
+    .stButton button {
+        background-color: #4CAF50; /* Cambiar color de fondo */
+        color: white; /* Color del texto */
+        font-size: 20px; /* Cambiar tamaño del texto */
+        padding: 10px 24px; /* Tamaño del botón */
+        border-radius: 12px; /* Bordes redondeados */
+        border: none; /* Sin borde */
+        margin-top: 20px; /* Espaciado superior */
+        cursor: pointer;
+    }
+
+    .stButton button:hover {
+        background-color: #45a049; /* Color al pasar el mouse por encima */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Mostrar el botón modificado
+
+
 # Botón de ingreso
 with col1:
     if st.button('Ver Promedio-Dias'):
