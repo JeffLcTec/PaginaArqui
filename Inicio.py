@@ -39,8 +39,9 @@ col1, col2, col3 = st.columns([1, 2, 1])
 st.markdown("""
     <style>
     .stButton button {
+        font-family: 'Montserrat', sans-serif;  /* Cambia la fuente a Montserrat */
         background-color: #1e3f7d; /* Cambiar color de fondo */
-        color: red; /* Color del texto */
+        color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
         padding: 10px 24px; /* Tamaño del botón */
         border-radius: 12px; /* Bordes redondeados */
