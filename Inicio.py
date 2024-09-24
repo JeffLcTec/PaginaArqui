@@ -35,7 +35,7 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 # Botón de ingreso
 if st.button('Ver Datos'):
     st.write("Datos cargando...")
-    st.page_link(1_Rango_Dia.py)
+    st.page_link("1_Rango_Dia.py")
 
 # Estilo CSS personalizado para darle un toque adicional
 st.markdown("""
