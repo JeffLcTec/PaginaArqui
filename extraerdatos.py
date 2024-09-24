@@ -15,6 +15,7 @@ response = requests.get(url)
 if response.status_code == 200:
     # Convertimos la respuesta en formato JSON a un diccionario de Python
     data = response.json()
-    print(data)
+    for registro in data['feeds']:
+        print(registro)
 else:
     print(f"Error al obtener los datos: {response.status_code}")
