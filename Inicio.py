@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 
 # Configuración de página principal
-col1, col2, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
+col2 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
 with col2:
     st.image("TecLogo.png", width=250) 
 
@@ -33,6 +33,7 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 # Imagen o ícono decorativo
 
 # Botón de ingreso
+col1, col3 = st.columns([1, 2, 1])  # Columnas con proporciones 1:2:1
 with col1:
     if st.button('Ver Promedio-Dias'):
         st.switch_page("pages/1_Rango_Dia.py")
