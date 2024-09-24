@@ -35,7 +35,7 @@ if on:
     
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
-    
+   promedio_humedad = datos_filtrados['humedad'].mean()
     # Crear la figura del gráfico
    fig = go.Figure()
     
@@ -60,9 +60,30 @@ if on:
       xaxis_title="Fecha",
       yaxis_title="Temperatura (°C)"
    )
+   
+   fig1.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'],mode='lines+markers', name='Humedad'))
+   fig1.update_layout(
+            title=f"Humedad Promedio desde {fecha_inicio} hasta {fecha_fin}",
+            xaxis_title="Fecha",
+            yaxis_title="Humedad (%)",
+            height=400,
+            xaxis_tickformat='%Y-%m-%d',
+            xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
+         ) 
+    # Añadir la línea del promedio
+   fig1.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_humedad] * len(datos_filtrados),
+                           mode='lines', line=dict(dash='dash', color='Cyan'),
+                           name=f"Promedio: {promedio_humedad:.2f} %"))
     
+    # Añadir título y etiquetas
+   fig1.update_layout(
+      title=f"Humedad promedio desde {fecha_inicio} hasta {fecha_fin}",
+      xaxis_title="Fecha",
+      yaxis_title="Humedad %"
+   )
     # Mostrar el gráfico en Streamlit
    st.plotly_chart(fig)
+   st.plotly_chart(fig1)
 else:
    if fecha_inicio and fecha_fin:
        try:
