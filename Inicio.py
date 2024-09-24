@@ -51,7 +51,7 @@ st.markdown("""
     }
 
     .stButton button:hover {
-        background-color: #45a049; /* Color al pasar el mouse por encima */
+        background-color: #2653a9; /* Color al pasar el mouse por encima */
     }
 """, unsafe_allow_html=True)
 
