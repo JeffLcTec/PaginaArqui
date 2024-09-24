@@ -38,9 +38,8 @@ col1, col2, col3 = st.columns([1, 2, 1])
 # Definir el estilo CSS para los botones
 st.markdown("""
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Arial+Black&display=swap');  /* Solo si es necesario, no para Arial Black */
-    .stButton>button {
-        font-family: 'Impact', sans-serif; 
+      .custom-button {
+        font-family: 'Arial Black', sans-serif;
         background-color: #1e3f7d; /* Cambiar color de fondo */
         color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
@@ -55,6 +54,7 @@ st.markdown("""
         background-color: #45a049; /* Color al pasar el mouse por encima */
     }
     </style>
+    <button class="custom-button">Ver Promedio-Dias</button>
 """, unsafe_allow_html=True)
 
 # Mostrar el botón modificado
