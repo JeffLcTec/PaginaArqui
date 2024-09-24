@@ -4,13 +4,11 @@ import plotly.graph_objects as go
 from datetime import datetime
 import json
 st.write('# Promedio por Rango Dias')
-with open("temperatura.json", "r") as archivo_json:
-    archivo = json.load(archivo_json)
-datos = pd.json_normalize(archivo['feeds'])
-fechas_df = datos[['created_at']]
+archivo = pd.read_json("temperatura.json")
+datos = pd.json_normalize(archivo['datos'])
+fechas_df = datos[['dia']]
    
-   
-   
+
    # Cuadro de selección para Fecha de Inicio
 fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", fechas_df)
    

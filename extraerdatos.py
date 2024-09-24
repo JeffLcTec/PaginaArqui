@@ -11,11 +11,21 @@ url = f'https://api.thingspeak.com/channels/{channel_id}/feeds.json?api_key={api
 # Realizamos la solicitud HTTP GET
 response = requests.get(url)
 
-# Verificamos si la solicitud fue exitosa
-if response.status_code == 200:
-    # Convertimos la respuesta en formato JSON a un diccionario de Python
-    data = response.json()
-    with open('temperatura.json', 'w') as archivo_json:
-        json.dump(data, archivo_json, indent=4)  # `indent` es para formatear el JSON con indentación
-else:
-    print(f"Error al obtener los datos: {response.status_code}")
+
+data = response.json()
+datos = {}
+lista_datos = []
+
+for registro in data['feeds']:
+    dic = {}
+    dic['dia'] = registro['created_at'][0:9]
+    dic['hora'] = registro['created_at'][11:19]
+    dic['temperatura'] = registro['field1']
+    dic['humedad'] = registro['field2']
+
+    lista_datos.append(dic)
+
+datos['datos'] = lista_datos
+
+with open('temperatura.json', 'w') as archivo_json:
+    json.dump(datos, archivo_json, indent=4)  # `indent` es para formatear el JSON con indentación
