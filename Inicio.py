@@ -43,7 +43,7 @@ st.markdown("""
         background-color: #1e3f7d; /* Cambiar color de fondo */
         color: white; /* Color del texto */
         font-size: 20px; /* Cambiar tamaño del texto */
-        padding: 10px 50px; /* Tamaño del botón */
+        padding: 20px 10px; /* Tamaño del botón */
         border-radius: 12px; /* Bordes redondeados */
         border: none; /* Sin borde */
         margin-top: 20px; /* Espaciado superior */
