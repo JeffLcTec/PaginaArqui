@@ -38,7 +38,7 @@ if on:
    promedio_humedad = datos_filtrados['humedad'].mean()
     # Crear la figura del gráfico
    fig = go.Figure()
-    
+   fig1 = go.Figure() 
     # Añadir la línea de temperaturas
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'],mode='lines+markers', name='Temperatura'))
    fig.update_layout(
