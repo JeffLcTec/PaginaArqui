@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 st.write('# Promedio por Rango Dias')
-col1,col2,col3 = st.columns[
+col1,col2,col3 = st.columns([1, 2, 1]) 
+with col3:
+   st.button("Regresar")
 archivo = pd.read_json("temperatura.json")
 datos = pd.json_normalize(archivo['datos_ultimos_7_dias'])
 fechas_df = datos[['dia']]
