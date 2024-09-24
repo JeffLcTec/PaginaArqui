@@ -47,7 +47,7 @@ if on:
             yaxis_title="Temperatura (°C)",
             height=400,
             xaxis_tickformat='%Y-%m-%d',
-            xaxis=dict(tickmode='linear', tickvals=datos_filtrados['dia'])
+            xaxis=dict(tickmode='linear', tickvals=datos_filtrados['dia']),
             yaxis=dict(range=[25, 30]),     # Asegurar el mismo rango en el eje y
          ) 
     # Añadir la línea del promedio
