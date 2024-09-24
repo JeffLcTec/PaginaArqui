@@ -67,7 +67,7 @@ if on:
       yaxis_title="Temperatura (°C)"
    )
    
-   fig1.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'],mode='lines+markers',line=dict(color='blue'), name='Humedad'))
+   fig1.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'],mode='lines+markers',line=dict(color='cyan'), name='Humedad'))
    fig1.update_layout(
             title=f"Humedad Promedio desde {fecha_inicio} hasta {fecha_fin}",
             xaxis_title="Fecha",
