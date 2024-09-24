@@ -33,6 +33,7 @@ st.markdown("<h3 style='text-align: center; color: gray;'>Bienvenido al portal d
 # Añadir un espaciado antes de las columnas
 st.markdown("<br><br><br>", unsafe_allow_html=True)  # Añadir saltos de línea
 
+col1, col2, col3 = st.columns([1, 2, 1])
 # Botón de ingreso
 with col1:
     if st.button('Ver Promedio-Dias'):
