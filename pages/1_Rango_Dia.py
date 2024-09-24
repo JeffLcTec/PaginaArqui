@@ -47,8 +47,7 @@ if on:
             yaxis_title="Temperatura (°C)",
             height=400,
             xaxis_tickformat='%Y-%m-%d',
-            xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia']),
-            yaxis=dict(range=[25, 30]),     # Asegurar el mismo rango en el eje y
+            xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
          ) 
     # Añadir la línea del promedio
    fig.add_trace(go.Scatter(x=datos_filtrados['dia'], y=[promedio_temperatura] * len(datos_filtrados),
@@ -69,7 +68,6 @@ if on:
             yaxis_title="Humedad (%)",
             height=400,
             xaxis_tickformat='%Y-%m-%d',
-            yaxis=dict(range=[25, 30]), 
             xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
          ) 
     # Añadir la línea del promedio
