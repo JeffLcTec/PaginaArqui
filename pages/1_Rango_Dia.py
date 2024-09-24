@@ -17,7 +17,9 @@ fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_df)
 
 col1,col2,col3 = st.columns([1, 2, 1]) 
 with col3:
-   st.button("Regresar")
+   if st.button("Regresar"):
+      st.switch_page("Inicio.py")
+   
 with col1:
    on = st.toggle("Ver Promedio")
 
