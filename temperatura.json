@@ -95,6 +95,12 @@
             "hora": "15:47",
             "temperatura": 25.3,
             "humedad": 60
+        },
+        {
+            "dia": "2024-09-24",
+            "hora": "15:54",
+            "temperatura": 25.3,
+            "humedad": 60
         }
     ]
 }
