@@ -43,10 +43,24 @@ if on:
    # Agrupar por 'dia' y calcular el promedio de temperatura y humedad
 
    datos_filtrados = datos_filtrados.groupby('dia').agg({
-        'temperatura': 'mean',
-        'humedad': 'mean'
-    }).reset_index() 
-   
+      'temperatura': 'mean',
+      'humedad': 'mean'
+   }).reset_index()
+   # Obtener los días con la temperatura máxima y mínima
+   dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
+   dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
+   # Obtener los días con la humedad máxima y mínima
+   dia_max_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmax()]
+   dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]
+   # Crear un DataFrame para mostrar estos datos
+   resumen = pd.DataFrame({
+      'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
+      'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
+      'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
+   })
+   # Mostrar los datos en Streamlit
+   st.write("Días con valores extremos:")
+   st.write(resumen)
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
    promedio_humedad = datos_filtrados['humedad'].mean()

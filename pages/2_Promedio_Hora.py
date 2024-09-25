@@ -44,6 +44,21 @@ if on:
     
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
+    # Obtener los días con la temperatura máxima y mínima
+   dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
+   dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]   
+   # Obtener los días con la humedad máxima y mínima
+   dia_max_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmax()]
+   dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]   
+   # Crear un DataFrame para mostrar estos datos
+   resumen_promedio_diario = pd.DataFrame({
+       'Hora': [dia_max_temp['hora'], dia_min_temp['hora'], dia_max_humedad['hora'], dia_min_humedad['hora']],
+       'Descripción': ['Temperatura Máxima (Promedio)', 'Temperatura Mínima (Promedio)', 'Humedad Máxima (Promedio)', 'Humedad Mínima (Promedio)'],
+       'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
+   })   
+   # Mostrar los datos en Streamlit
+   st.write("Días con valores extremos (Promedio por Día):")
+   st.write(resumen_promedio_diario)
     
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
@@ -114,7 +129,7 @@ else:
            dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]   
            # Crear un DataFrame para mostrar estos datos
            resumen_promedio_diario = pd.DataFrame({
-               'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
+               'Hora': [dia_max_temp['hora'], dia_min_temp['hora'], dia_max_humedad['hora'], dia_min_humedad['hora']],
                'Descripción': ['Temperatura Máxima (Promedio)', 'Temperatura Mínima (Promedio)', 'Humedad Máxima (Promedio)', 'Humedad Mínima (Promedio)'],
                'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
            })   
