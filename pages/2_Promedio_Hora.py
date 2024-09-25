@@ -67,6 +67,15 @@ if on:
                            name=f"Promedio: {promedio_temperatura:.2f} °C"))
     
    
+   fig1.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['humedad'],mode='lines+markers',line=dict(color='blue'), name='Humedad'))
+   fig1.update_layout(
+            title=f"Humedad Promedio de {fecha_seleccionada} ",
+            xaxis_title="Fecha",
+            yaxis_title="Humedad (%)",
+            height=400,
+            xaxis_tickformat='%Y-%m-%d',
+            xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
+         ) 
     # Añadir la línea del promedio
    fig1.add_trace(go.Scatter(x=datos_filtrados['hora'], y=[promedio_humedad] * len(datos_filtrados),
                            mode='lines', line=dict(dash='dash', color='Red'),
