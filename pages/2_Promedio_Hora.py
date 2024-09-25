@@ -57,7 +57,7 @@ if on:
        'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
    })   
    # Mostrar los datos en Streamlit
-   st.write("Días con valores extremos (Promedio por Día):")
+   st.write("Días con valores extremos :")
    st.write(resumen_promedio_diario)
     
     # Calcular el promedio de temperatura en el rango de fechas
