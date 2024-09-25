@@ -113,16 +113,20 @@ else:
          datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
          # Agrupar por 'dia' y calcular el promedio de temperatura y humedad
          datos_filtrados = datos_filtrados.groupby('dia').agg({
-            'temperatura': ['mean', 'max', 'min'],
-            'humedad': ['mean', 'max', 'min']
+            'temperatura': 'mean',
+            'humedad': 'mean'
+         }).reset_index()
+         datos_promedio = datos_filtrados.groupby('dia').agg({
+            'temperatura': ['max', 'min'],
+            'humedad': ['max', 'min']
          }).reset_index()
 
          # Mostrar los datos agrupados con promedios, máximos y mínimos
-         st.write("Datos agrupados por día con sus promedios, máximos y mínimos:")
-         st.dataframe(datos_filtrados) 
+         st.write("Datos agrupados por día con sus máximos y mínimos:")
+         st.write(datos_promedio) 
            # Gráfico de Temperatura
          fig_temp = go.Figure()
-         fig_temp.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados[('temperatura', 'mean')], mode='lines', name='Temperatura', line=dict(color='red')))
+         fig_temp.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
          fig_temp.update_layout(
                title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
                xaxis_title="Fecha",
@@ -134,7 +138,7 @@ else:
       
             # Gráfico de Humedad
          fig_humedad = go.Figure()
-         fig_humedad.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados[('humedad', 'mean')], mode='lines', name='Humedad', line=dict(color='blue')))
+         fig_humedad.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
          fig_humedad.update_layout(
                title=f"Humedad desde {fecha_inicio} hasta {fecha_fin}",
                xaxis_title="Fecha",
