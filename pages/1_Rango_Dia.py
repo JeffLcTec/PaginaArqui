@@ -8,7 +8,9 @@ archivo = pd.read_json("temperatura.json")
 datos = pd.json_normalize(archivo['datos'])
 fechas_df = datos[['dia']]
    
-   
+# Convertir las columnas de temperatura y humedad a tipo float
+datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
+datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')   
    
 # Cuadro de selección para Fecha de Inicio y Fin
 fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
@@ -99,7 +101,6 @@ if on:
 else:
    if fecha_inicio and fecha_fin:
       try:
-         
          fecha_inicio = pd.to_datetime(fecha_inicio).date()
          fecha_fin = pd.to_datetime(fecha_fin).date()
            
