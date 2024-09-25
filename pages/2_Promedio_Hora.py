@@ -37,7 +37,7 @@ if on:
     
     # Convertir la columna 'dia' a datetime para poder filtrar
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-    
+   datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
     # Convertir a tipo float
    datos['temperatura'] = datos['temperatura'].astype(float)
    datos['humedad'] = datos['humedad'].astype(float)
@@ -91,7 +91,7 @@ else:
            
               # Convertir la columna 'dia' a datetime para poder filtrar
            datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-          
+           datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
            datos['temperatura'] = datos['temperatura'].astype(float)   
           
            datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
