@@ -15,7 +15,7 @@ datos_sin_duplicados = datos.drop_duplicates(subset=['dia'])
 # Mostrar el DataFrame sin fechas duplicadas
 
    # Cuadro de selección para Fecha de Inicio
-fecha_seleccionada = st.selectbox("Seleccionar Fecha ", fechas_df)
+fecha_seleccionada = st.selectbox("Seleccionar Fecha ", datos_sin_duplicados[['dia']])
    
    # Cuadro de selección para Fecha de Fin
 
