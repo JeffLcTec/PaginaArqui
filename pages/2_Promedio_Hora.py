@@ -9,7 +9,11 @@ datos = pd.json_normalize(archivo['datos'])
 fechas_df = datos[['dia']]
    
    
-   
+# Eliminar fechas duplicadas
+datos_sin_duplicados = datos.drop_duplicates(subset=['dia'])
+
+# Mostrar el DataFrame sin fechas duplicadas
+
    # Cuadro de selección para Fecha de Inicio
 fecha_seleccionada = st.selectbox("Seleccionar Fecha ", fechas_df)
    
@@ -23,7 +27,7 @@ with col3:
    
 with col1:
    on = st.toggle("Ver Promedio")
-st.write(fechas_df)
+st.write(datos_sin_duplicados[['dia']])
 if on:
 
     # Convertir las fechas seleccionadas a formato datetime
