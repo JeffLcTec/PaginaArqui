@@ -81,19 +81,19 @@
         {
             "dia": "2024-09-03",
             "hora": "18:00:00",
-            "temperatura": "24",
+            "temperatura": "20",
             "humedad": "68"
         },
         {
             "dia": "2024-09-04",
             "hora": "06:00:00",
-            "temperatura": "21",
+            "temperatura": "18",
             "humedad": "72"
         },
         {
             "dia": "2024-09-04",
             "hora": "10:00:00",
-            "temperatura": "24",
+            "temperatura": "29",
             "humedad": "69"
         },
         {
@@ -105,13 +105,13 @@
         {
             "dia": "2024-09-04",
             "hora": "18:00:00",
-            "temperatura": "23",
+            "temperatura": "32",
             "humedad": "70"
         },
         {
             "dia": "2024-09-05",
             "hora": "06:00:00",
-            "temperatura": "20",
+            "temperatura": "10",
             "humedad": "74"
         },
         {
@@ -123,13 +123,13 @@
         {
             "dia": "2024-09-05",
             "hora": "14:00:00",
-            "temperatura": "26",
+            "temperatura": "20",
             "humedad": "64"
         },
         {
             "dia": "2024-09-05",
             "hora": "18:00:00",
-            "temperatura": "22",
+            "temperatura": "18",
             "humedad": "71"
         },
         {
@@ -147,7 +147,7 @@
         {
             "dia": "2024-09-06",
             "hora": "14:00:00",
-            "temperatura": "27",
+            "temperatura": "30",
             "humedad": "62"
         },
         {
