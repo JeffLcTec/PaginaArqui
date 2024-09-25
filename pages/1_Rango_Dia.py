@@ -10,11 +10,9 @@ fechas_df = datos[['dia']]
    
    
    
-   # Cuadro de selección para Fecha de Inicio
-fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", fechas_df)
-   
-   # Cuadro de selección para Fecha de Fin
-fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_df)
+# Cuadro de selección para Fecha de Inicio y Fin
+fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
+fecha_fin = st.selectbox("Seleccionar Fecha de Fin", datos['dia'].unique())
 
 col1,col2,col3 = st.columns([2, 3, 1]) 
 with col3:
