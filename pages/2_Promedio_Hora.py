@@ -23,7 +23,7 @@ with col3:
    
 with col1:
    on = st.toggle("Ver Promedio")
-st.write(datos['dia'].unique())
+st.write(fechas_df)
 if on:
 
     # Convertir las fechas seleccionadas a formato datetime
@@ -48,23 +48,23 @@ if on:
    fig = go.Figure()
    fig1 = go.Figure() 
     # Añadir la línea de temperaturas
-   fig.add_trace(go.Scatter(x=datos_filtrados['Hora'], y=datos_filtrados['temperatura'],mode='lines+markers', line=dict(color='red'),name='Temperatura'))
+   fig.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'],mode='lines+markers', line=dict(color='red'),name='Temperatura'))
    fig.update_layout(
             title=f"Temperatura Promedio de {fecha_seleccionada}",
             xaxis_title="Fecha",
             yaxis_title="Temperatura (°C)",
             height=400,
             xaxis_tickformat='%Y-%m-%d',
-            xaxis=dict(tickmode='array', tickvals=datos_filtrados['Hora'])
+            xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
          ) 
     # Añadir la línea del promedio
-   fig.add_trace(go.Scatter(x=datos_filtrados['Hora'], y=[promedio_temperatura] * len(datos_filtrados),
+   fig.add_trace(go.Scatter(x=datos_filtrados['hora'], y=[promedio_temperatura] * len(datos_filtrados),
                            mode='lines', line=dict(dash='dash', color='cyan'),
                            name=f"Promedio: {promedio_temperatura:.2f} °C"))
     
    
     # Añadir la línea del promedio
-   fig1.add_trace(go.Scatter(x=datos_filtrados['Hora'], y=[promedio_humedad] * len(datos_filtrados),
+   fig1.add_trace(go.Scatter(x=datos_filtrados['hora'], y=[promedio_humedad] * len(datos_filtrados),
                            mode='lines', line=dict(dash='dash', color='Red'),
                            name=f"Promedio: {promedio_humedad:.2f} %"))
     
@@ -96,26 +96,26 @@ else:
              
               # Gráfico de Temperatura
            fig_temp = go.Figure()
-           fig_temp.add_trace(go.Scatter(x=datos_filtrados['Hora'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
+           fig_temp.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
            fig_temp.update_layout(
                title=f"Temperatura de {fecha_seleccionada}",
                xaxis_title="Fecha",
                yaxis_title="Temperatura (°C)",
                height=350,
                xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['Hora'])
+               xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
            )
       
               # Gráfico de Humedad
            fig_humedad = go.Figure()
-           fig_humedad.add_trace(go.Scatter(x=datos_filtrados['Hora'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
+           fig_humedad.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
            fig_humedad.update_layout(
                title=f"Humedad de {fecha_seleccionada}",
                xaxis_title="Fecha",
                yaxis_title="Humedad (%)",
                height=350,
                xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['Hora'])
+               xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
            )
       
               # Mostrar los gráficos en Streamlit
