@@ -23,7 +23,7 @@ with col3:
    
 with col1:
    on = st.toggle("Ver Promedio")
-
+st.write(datos['dia'].unique())
 if on:
 
     # Convertir las fechas seleccionadas a formato datetime
