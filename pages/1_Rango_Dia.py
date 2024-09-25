@@ -38,7 +38,13 @@ if on:
     
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
-    
+   # Agrupar por 'dia' y calcular el promedio de temperatura y humedad
+
+   datos_promedio = datos_filtrados.groupby('dia').agg({
+        'temperatura': 'mean',
+        'humedad': 'mean'
+    }).reset_index() 
+   
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
    promedio_humedad = datos_filtrados['humedad'].mean()
@@ -92,47 +98,53 @@ if on:
    st.plotly_chart(fig1)
 else:
    if fecha_inicio and fecha_fin:
-       try:
+      try:
          
-           fecha_inicio = pd.to_datetime(fecha_inicio).date()
-           fecha_fin = pd.to_datetime(fecha_fin).date()
+            fecha_inicio = pd.to_datetime(fecha_inicio).date()
+            fecha_fin = pd.to_datetime(fecha_fin).date()
               
            
               # Convertir la columna 'dia' a datetime para poder filtrar
-           datos['dia'] = pd.to_datetime(datos['dia']).dt.date
+            datos['dia'] = pd.to_datetime(datos['dia']).dt.date
           
-           datos['temperatura'] = datos['temperatura'].astype(float)   
+            datos['temperatura'] = datos['temperatura'].astype(float)   
           
-           datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
-          
-           promedio_temperatura = datos_filtrados['temperatura'].mean() 
+            datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
+
+          # Agrupar por 'dia' y calcular el promedio de temperatura y humedad
+            datos_promedio = datos_filtrados.groupby('dia').agg({
+               'temperatura': 'mean',
+               'humedad': 'mean'
+            }).reset_index()
+            
+            promedio_temperatura = datos_filtrados['temperatura'].mean() 
              
               # Gráfico de Temperatura
-           fig_temp = go.Figure()
-           fig_temp.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
-           fig_temp.update_layout(
-               title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
-               xaxis_title="Fecha",
-               yaxis_title="Temperatura (°C)",
-               height=350,
-               xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
-           )
-      
-              # Gráfico de Humedad
-           fig_humedad = go.Figure()
-           fig_humedad.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
-           fig_humedad.update_layout(
-               title=f"Humedad desde {fecha_inicio} hasta {fecha_fin}",
-               xaxis_title="Fecha",
-               yaxis_title="Humedad (%)",
-               height=350,
-               xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
-           )
-      
-              # Mostrar los gráficos en Streamlit
-           st.plotly_chart(fig_temp)
-           st.plotly_chart(fig_humedad)
-       except Exception as e:
-           st.error(f"Error al procesar el rango de fechas: {e}")
+            fig_temp = go.Figure()
+            fig_temp.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
+            fig_temp.update_layout(
+                  title=f"Temperatura desde {fecha_inicio} hasta {fecha_fin}",
+                  xaxis_title="Fecha",
+                  yaxis_title="Temperatura (°C)",
+                  height=350,
+                  xaxis_tickformat='%Y-%m-%d',
+                  xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
+            )
+         
+               # Gráfico de Humedad
+            fig_humedad = go.Figure()
+            fig_humedad.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
+            fig_humedad.update_layout(
+                  title=f"Humedad desde {fecha_inicio} hasta {fecha_fin}",
+                  xaxis_title="Fecha",
+                  yaxis_title="Humedad (%)",
+                  height=350,
+                  xaxis_tickformat='%Y-%m-%d',
+                  xaxis=dict(tickmode='array', tickvals=datos_filtrados['dia'])
+            )
+         
+               # Mostrar los gráficos en Streamlit
+            st.plotly_chart(fig_temp)
+            st.plotly_chart(fig_humedad)
+      except Exception as e:
+         st.error(f"Error al procesar el rango de fechas: {e}")
