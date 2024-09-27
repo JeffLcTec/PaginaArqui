@@ -2,18 +2,6 @@
     "datos": [
         {
             "dia": "2024-09-27",
-            "hora": "00:36:38",
-            "temperatura": "26",
-            "humedad": "83"
-        },
-        {
-            "dia": "2024-09-27",
-            "hora": "00:50:49",
-            "temperatura": "26",
-            "humedad": "84"
-        },
-        {
-            "dia": "2024-09-27",
             "hora": "01:15:36",
             "temperatura": "26",
             "humedad": "84"
@@ -59,6 +47,18 @@
             "hora": "17:44:15",
             "temperatura": "29",
             "humedad": "73"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "17:56:20",
+            "temperatura": "29",
+            "humedad": "73"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:12:06",
+            "temperatura": "29",
+            "humedad": "74"
         }
     ]
 }
