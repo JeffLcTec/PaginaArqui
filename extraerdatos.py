@@ -18,7 +18,7 @@ lista_datos = []
 
 for registro in data['feeds']:
     dic = {}
-    dic['dia'] = registro['created_at'][0:9]
+    dic['dia'] = registro['created_at'][0:10]
     dic['hora'] = registro['created_at'][11:19]
     dic['temperatura'] = registro['field1']
     dic['humedad'] = registro['field2']
