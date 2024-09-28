@@ -1,6 +1,312 @@
 {
     "datos": [
         {
+            "dia": "2024-09-26",
+            "hora": "17:07:26",
+            "temperatura": "30",
+            "humedad": "67"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "17:23:35",
+            "temperatura": "30",
+            "humedad": "67"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "17:42:48",
+            "temperatura": "30",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "17:55:57",
+            "temperatura": "32",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "18:14:13",
+            "temperatura": "32",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "18:30:07",
+            "temperatura": "33",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "18:58:52",
+            "temperatura": "31",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "19:15:29",
+            "temperatura": "32",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "19:32:16",
+            "temperatura": "32",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "19:47:26",
+            "temperatura": "31",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "20:06:17",
+            "temperatura": "31",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "20:06:34",
+            "temperatura": "30",
+            "humedad": "65"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "20:14:58",
+            "temperatura": "30",
+            "humedad": "67"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "20:58:55",
+            "temperatura": "30",
+            "humedad": "69"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "21:18:37",
+            "temperatura": "29",
+            "humedad": "71"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "21:37:09",
+            "temperatura": "29",
+            "humedad": "71"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "21:59:34",
+            "temperatura": "29",
+            "humedad": "72"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "22:16:33",
+            "temperatura": "28",
+            "humedad": "73"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "22:32:20",
+            "temperatura": "28",
+            "humedad": "75"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "22:52:40",
+            "temperatura": "28",
+            "humedad": "77"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:07:33",
+            "temperatura": "27",
+            "humedad": "79"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:10:35",
+            "temperatura": "27",
+            "humedad": "79"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:24:28",
+            "temperatura": "27",
+            "humedad": "79"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:24:54",
+            "temperatura": "27",
+            "humedad": "79"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:41:14",
+            "temperatura": "27",
+            "humedad": "81"
+        },
+        {
+            "dia": "2024-09-26",
+            "hora": "23:49:48",
+            "temperatura": "",
+            "humedad": ""
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "00:18:24",
+            "temperatura": "26",
+            "humedad": "83"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "00:36:38",
+            "temperatura": "26",
+            "humedad": "83"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "00:50:49",
+            "temperatura": "26",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "01:15:36",
+            "temperatura": "26",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "01:29:15",
+            "temperatura": "26",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "01:42:11",
+            "temperatura": "26",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "16:12:24",
+            "temperatura": "28",
+            "humedad": "77"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "16:33:10",
+            "temperatura": "28",
+            "humedad": "76"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "16:59:27",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "17:19:55",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "17:44:15",
+            "temperatura": "29",
+            "humedad": "73"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "17:56:20",
+            "temperatura": "29",
+            "humedad": "73"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:12:06",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:24:57",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:30:56",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:56:47",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "18:58:02",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "19:03:25",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "19:32:25",
+            "temperatura": "29",
+            "humedad": "74"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "19:50:56",
+            "temperatura": "28",
+            "humedad": "75"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "20:04:59",
+            "temperatura": "28",
+            "humedad": "75"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "20:21:51",
+            "temperatura": "28",
+            "humedad": "76"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "20:36:47",
+            "temperatura": "28",
+            "humedad": "77"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "21:05:36",
+            "temperatura": "28",
+            "humedad": "79"
+        },
+        {
+            "dia": "2024-09-27",
+            "hora": "21:21:38",
+            "temperatura": "27",
+            "humedad": "80"
+        },
+        {
             "dia": "2024-09-27",
             "hora": "21:46:46",
             "temperatura": "27",
