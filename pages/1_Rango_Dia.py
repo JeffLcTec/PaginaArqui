@@ -50,24 +50,7 @@ if on:
    # Redondear los promedios a 2 decimales directamente
    datos_filtrados['temperatura'] = datos_filtrados['temperatura'].round(2)
    datos_filtrados['humedad'] = datos_filtrados['humedad'].round(2)
-   # Obtener los días con la temperatura máxima y mínima
-   dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
-   dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
-   # Obtener los días con la humedad máxima y mínima
-   dia_max_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmax()]
-   dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]
-   # Crear un DataFrame para mostrar estos datos
-   resumen = pd.DataFrame({
-      'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
-      'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
-      'Valor':  [round(dia_max_temp['temperatura'], 2), 
-              round(dia_min_temp['temperatura'], 2), 
-              round(dia_max_humedad['humedad'], 2), 
-              round(dia_min_humedad['humedad'], 2)]
-   })
-   # Mostrar los datos en Streamlit
-   st.write("Días con valores extremos:")
-   st.write(resumen)
+   
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
    promedio_humedad = datos_filtrados['humedad'].mean()
@@ -140,28 +123,8 @@ else:
 
          datos_filtrados['temperatura'] = datos_filtrados['temperatura'].round(2)
          datos_filtrados['humedad'] = datos_filtrados['humedad'].round(2)
-         # Obtener los días con la temperatura máxima y mínima
-         dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
-         dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
 
-         # Obtener los días con la humedad máxima y mínima
-         dia_max_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmax()]
-         dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]
-
-         # Crear un DataFrame para mostrar estos datos
-         resumen = pd.DataFrame({
-            'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
-            'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
-            'Valor': [round(dia_max_temp['temperatura'], 2), 
-              round(dia_min_temp['temperatura'], 2), 
-              round(dia_max_humedad['humedad'], 2), 
-              round(dia_min_humedad['humedad'], 2)]
-         })
-
-         # Mostrar los datos en Streamlit
-         st.write("Días con valores extremos:")
-         st.write(resumen)
-           # Gráfico de Temperatura
+         # Gráfico de Temperatura
          fig_temp = go.Figure()
          fig_temp.add_trace(go.Scatter(x=datos_filtrados['dia'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
          fig_temp.update_layout(
