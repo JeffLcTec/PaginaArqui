@@ -9,8 +9,9 @@ datos = pd.json_normalize(archivo['datos'])
 # Convertir las columnas a sus respectivos tipos
 datos['dia'] = pd.to_datetime(datos['dia']).dt.date
 datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
-datos['temperatura'] = datos['temperatura'].astype(float)
-datos['humedad'] = datos['humedad'].astype(float)
+datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
+datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
+
 
 # Crear opciones en el sidebar
 st.sidebar.title("Opciones de Selección")
