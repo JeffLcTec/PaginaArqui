@@ -6,7 +6,7 @@ channel_id = '2665378'
 api_key = '5VXSRHWA713VW8JR'
 
 # URL de la API de ThingSpeak para obtener los datos del campo 1 (por ejemplo)
-url = f'https://api.thingspeak.com/channels/{channel_id}/feeds.json?api_key={api_key}&results=10'
+url = f'https://api.thingspeak.com/channels/{channel_id}/feeds.json?api_key={api_key}&results='
 
 # Realizamos la solicitud HTTP GET
 response = requests.get(url)
