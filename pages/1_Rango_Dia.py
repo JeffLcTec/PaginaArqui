@@ -56,7 +56,10 @@ if on:
    resumen = pd.DataFrame({
       'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
       'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
-      'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
+      'Valor':  [round(dia_max_temp['temperatura'], 2), 
+              round(dia_min_temp['temperatura'], 2), 
+              round(dia_max_humedad['humedad'], 2), 
+              round(dia_min_humedad['humedad'], 2)]
    })
    # Mostrar los datos en Streamlit
    st.write("Días con valores extremos:")
@@ -142,7 +145,10 @@ else:
          resumen = pd.DataFrame({
             'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
             'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
-            'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
+            'Valor': [round(dia_max_temp['temperatura'], 2), 
+              round(dia_min_temp['temperatura'], 2), 
+              round(dia_max_humedad['humedad'], 2), 
+              round(dia_min_humedad['humedad'], 2)]
          })
 
          # Mostrar los datos en Streamlit
