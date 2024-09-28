@@ -43,6 +43,9 @@ with col1:
 with col3:
     if st.button('Ver Promedio-Horas'):
         st.switch_page("pages/2_Promedio_Hora.py")
+with col2:
+    if st.button('Ver Maximos y Minimos'):
+        st.switch_page("pages/3_Maximos_Minimos.py")
 # Estilo CSS personalizado para darle un toque adicional
 st.markdown("""
     <style>
