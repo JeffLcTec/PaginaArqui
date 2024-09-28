@@ -46,6 +46,10 @@ if on:
       'temperatura': 'mean',
       'humedad': 'mean'
    }).reset_index()
+
+   # Redondear los promedios a 2 decimales directamente
+   datos_filtrados['temperatura'] = datos_filtrados['temperatura'].round(2)
+   datos_filtrados['humedad'] = datos_filtrados['humedad'].round(2)
    # Obtener los días con la temperatura máxima y mínima
    dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
    dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
@@ -133,6 +137,9 @@ else:
             'temperatura': 'mean',
             'humedad': 'mean'
          }).reset_index()
+
+         datos_filtrados['temperatura'] = datos_filtrados['temperatura'].round(2)
+         datos_filtrados['humedad'] = datos_filtrados['humedad'].round(2)
          # Obtener los días con la temperatura máxima y mínima
          dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
          dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
