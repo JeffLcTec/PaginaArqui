@@ -53,7 +53,7 @@ if on:
    # Crear un DataFrame para mostrar estos datos
    resumen_promedio_diario = pd.DataFrame({
        'Hora': [dia_max_temp['hora'], dia_min_temp['hora'], dia_max_humedad['hora'], dia_min_humedad['hora']],
-       'Descripción': ['Temperatura Máxima (Promedio)', 'Temperatura Mínima (Promedio)', 'Humedad Máxima (Promedio)', 'Humedad Mínima (Promedio)'],
+       'Descripción': ['Temperatura Máxima ', 'Temperatura Mínima ', 'Humedad Máxima ', 'Humedad Mínima'],
        'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
    })   
    # Mostrar los datos en Streamlit
@@ -132,7 +132,7 @@ else:
            # Crear un DataFrame para mostrar estos datos
            resumen_promedio_diario = pd.DataFrame({
                'Hora': [dia_max_temp['hora'], dia_min_temp['hora'], dia_max_humedad['hora'], dia_min_humedad['hora']],
-               'Descripción': ['Temperatura Máxima (Promedio)', 'Temperatura Mínima (Promedio)', 'Humedad Máxima (Promedio)', 'Humedad Mínima (Promedio)'],
+               'Descripción': ['Temperatura Máxima ', 'Temperatura Mínima ', 'Humedad Máxima ', 'Humedad Mínima'],
                'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
            })   
            # Mostrar los datos en Streamlit
