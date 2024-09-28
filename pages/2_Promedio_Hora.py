@@ -39,8 +39,8 @@ if on:
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
    datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
     # Convertir a tipo float
-   datos['temperatura'] = datos['temperatura'].astype(float)
-   datos['humedad'] = datos['humedad'].astype(float)
+   datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
+   datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
     
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
@@ -116,7 +116,9 @@ else:
               # Convertir la columna 'dia' a datetime para poder filtrar
            datos['dia'] = pd.to_datetime(datos['dia']).dt.date
            datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
-           datos['temperatura'] = datos['temperatura'].astype(float)   
+          # Convertir las columnas 'temperatura' y 'humedad' a valores numéricos
+           datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
+           datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
           
            datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
 
