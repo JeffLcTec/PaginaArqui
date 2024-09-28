@@ -383,6 +383,18 @@
             "hora": "02:45:58",
             "temperatura": "24",
             "humedad": "85"
+        },
+        {
+            "dia": "2024-09-28",
+            "hora": "03:09:16",
+            "temperatura": "24",
+            "humedad": "85"
+        },
+        {
+            "dia": "2024-09-28",
+            "hora": "03:24:01",
+            "temperatura": "24",
+            "humedad": "85"
         }
     ]
 }
