@@ -46,7 +46,10 @@ if on:
         'temperatura': 'mean',
         'humedad': 'mean'
     }).reset_index()
-
+    
+    # Formatear la hora para que se vea correctamente en el gráfico
+    datos_promediados['hora'] = datos_promediados['hora'].dt.strftime('%H:%M')
+   
     # Gráfico de temperatura
     fig_temp = go.Figure()
     fig_temp.add_trace(go.Scatter(x=datos_promediados['hora'], y=datos_promediados['temperatura'],
@@ -103,6 +106,9 @@ else:
                   'humedad': 'mean'
                }).reset_index()
             
+            # Formatear la hora para que se vea correctamente en el gráfico
+            datos_promediados['hora'] = datos_promediados['hora'].dt.strftime('%H:%M')
+
             # Gráfico de Temperatura
             fig_temp = go.Figure()
             fig_temp.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'], mode='lines',
