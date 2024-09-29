@@ -42,7 +42,13 @@ if on:
    
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
-   datos_filtrados['hora'] = datos_filtrados['hora'].unique()
+   datos_filtrados['hora'] = datos_filtrados['hora'].dt.floor('H')
+
+    # Agrupar por hora para unificar los datos de la misma hora
+   datos_filtrados = datos_filtrados.groupby('hora').agg({
+        'temperatura': 'mean',
+        'humedad': 'mean'
+    }).reset_index()
 
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
@@ -93,47 +99,52 @@ else:
    if fecha_seleccionada :
        try:
          
-           fecha_seleccionada = pd.to_datetime(fecha_seleccionada).date()
+         fecha_seleccionada = pd.to_datetime(fecha_seleccionada).date()
+            
+         
+            # Convertir la columna 'dia' a datetime para poder filtrar
+         datos['dia'] = pd.to_datetime(datos['dia']).dt.date
+         datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
+               #Convertir las columnas 'temperatura' y 'humedad' a valores numéricos
+         datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
+         datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
+         
+         datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
+         datos_filtrados['hora'] = datos_filtrados['hora'].dt.floor('H')
 
-              
+         # Agrupar por hora para unificar los datos de la misma hora
+         datos_filtrados = datos_filtrados.groupby('hora').agg({
+            'temperatura': 'mean',
+            'humedad': 'mean'
+         }).reset_index()
+         promedio_temperatura = datos_filtrados['temperatura'].mean() 
            
-              # Convertir la columna 'dia' a datetime para poder filtrar
-           datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-           datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
-          # Convertir las columnas 'temperatura' y 'humedad' a valores numéricos
-           datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
-           datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
-          
-           datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
-
-           promedio_temperatura = datos_filtrados['temperatura'].mean() 
-             
-              # Gráfico de Temperatura
-           fig_temp = go.Figure()
-           fig_temp.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
-           fig_temp.update_layout(
-               title=f"Temperatura de {fecha_seleccionada}",
-               xaxis_title="Fecha",
-               yaxis_title="Temperatura (°C)",
-               height=350,
-               xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
-           )
-      
-              # Gráfico de Humedad
-           fig_humedad = go.Figure()
-           fig_humedad.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
-           fig_humedad.update_layout(
-               title=f"Humedad de {fecha_seleccionada}",
-               xaxis_title="Fecha",
-               yaxis_title="Humedad (%)",
-               height=350,
-               xaxis_tickformat='%Y-%m-%d',
-               xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
-           )
-      
-              # Mostrar los gráficos en Streamlit
-           st.plotly_chart(fig_temp)
-           st.plotly_chart(fig_humedad)
+            # Gráfico de Temperatura
+         fig_temp = go.Figure()
+         fig_temp.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'], mode='lines', name='Temperatura', line=dict(color='red')))
+         fig_temp.update_layout(
+             title=f"Temperatura de {fecha_seleccionada}",
+             xaxis_title="Fecha",
+             yaxis_title="Temperatura (°C)",
+             height=350,
+             xaxis_tickformat='%Y-%m-%d',
+             xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
+         )
+   
+            # Gráfico de Humedad
+         fig_humedad = go.Figure()
+         fig_humedad.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['humedad'], mode='lines', name='Humedad', line=dict(color='blue')))
+         fig_humedad.update_layout(
+             title=f"Humedad de {fecha_seleccionada}",
+             xaxis_title="Fecha",
+             yaxis_title="Humedad (%)",
+             height=350,
+             xaxis_tickformat='%Y-%m-%d',
+             xaxis=dict(tickmode='array', tickvals=datos_filtrados['hora'])
+         )
+   
+            # Mostrar los gráficos en Streamlit
+         st.plotly_chart(fig_temp)
+         st.plotly_chart(fig_humedad)
        except Exception as e:
-           st.error(f"Error al procesar el rango de fechas: {e}")
+         st.error(f"Error al procesar el rango de fechas: {e}")
