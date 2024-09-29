@@ -44,7 +44,7 @@ if on:
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
 
    # Agrupar por hora y calcular el promedio de temperatura y humedad
-   datos_filtrados = datos_filtrados.groupby('hora').agg({
+   datos_filtrados = datos_filtrados.groupby(datos_filtrados['hora']).agg({
         'temperatura': 'mean',
         'humedad': 'mean'
     }).reset_index()
@@ -110,10 +110,11 @@ else:
           
            datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
          # Agrupar por hora y calcular el promedio de temperatura y humedad
-           datos_filtrados = datos_filtrados.groupby('hora').agg({
-           'temperatura': 'mean',
-           'humedad': 'mean'
-           }).reset_index()
+           datos_filtrados =datos_filtrados.groupby(datos_filtrados['hora']).agg({
+             'temperatura': 'mean',
+             'humedad': 'mean'
+            }).reset_index()
+
            promedio_temperatura = datos_filtrados['temperatura'].mean() 
              
               # Gráfico de Temperatura
