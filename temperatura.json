@@ -581,6 +581,18 @@
             "hora": "19:40:03",
             "temperatura": "32",
             "humedad": "71"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "19:59:00",
+            "temperatura": "32",
+            "humedad": "71"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "20:06:33",
+            "temperatura": "32",
+            "humedad": "71"
         }
     ]
 }
