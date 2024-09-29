@@ -104,13 +104,12 @@ else:
          
             # Convertir la columna 'dia' a datetime para poder filtrar
          datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-         datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.hour
                #Convertir las columnas 'temperatura' y 'humedad' a valores numéricos
          datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
          datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
          
          datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
-         datos_filtrados['hora'] = datos_filtrados['hora'].dt.floor('H')
+         datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S', errors='coerce')
 
          # Agrupar por hora para unificar los datos de la misma hora
          datos_filtrados = datos_filtrados.groupby('hora').agg({
