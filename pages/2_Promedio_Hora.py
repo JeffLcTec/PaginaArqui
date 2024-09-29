@@ -37,13 +37,14 @@ if on:
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
    datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S', errors='coerce')
    datos['hora'] = datos['hora'].dt.strftime('%H:00')
+
     # Convertir a tipo float
    datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
    datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
    
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
-   datos_filtrados['hora'] = datos_filtrados['hora'].dt.floor('H')
+   
 
     # Agrupar por hora para unificar los datos de la misma hora
    datos_filtrados = datos_filtrados.groupby('hora').agg({
