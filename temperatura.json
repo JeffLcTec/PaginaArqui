@@ -509,6 +509,36 @@
             "hora": "23:47:06",
             "temperatura": "28",
             "humedad": "83"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "00:19:18",
+            "temperatura": "29",
+            "humedad": "80"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "00:46:08",
+            "temperatura": "27",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "01:03:25",
+            "temperatura": "27",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "01:18:27",
+            "temperatura": "27",
+            "humedad": "84"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "01:41:21",
+            "temperatura": "27",
+            "humedad": "85"
         }
     ]
 }
