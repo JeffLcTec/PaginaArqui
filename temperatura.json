@@ -2,12 +2,6 @@
     "datos": [
         {
             "dia": "2024-09-26",
-            "hora": "18:30:07",
-            "temperatura": "33",
-            "humedad": "65"
-        },
-        {
-            "dia": "2024-09-26",
             "hora": "18:58:52",
             "temperatura": "31",
             "humedad": "65"
@@ -599,6 +593,12 @@
             "hora": "22:09:47",
             "temperatura": "30",
             "humedad": "76"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "22:48:20",
+            "temperatura": "30",
+            "humedad": "78"
         }
     ]
 }
