@@ -563,6 +563,12 @@
             "hora": "18:38:39",
             "temperatura": "33",
             "humedad": "69"
+        },
+        {
+            "dia": "2024-09-29",
+            "hora": "18:54:25",
+            "temperatura": "33",
+            "humedad": "71"
         }
     ]
 }
