@@ -35,7 +35,8 @@ if on:
  
     # Convertir la columna 'dia' a datetime para poder filtrar
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
-   datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
+   datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S', errors='coerce')
+   datos['hora'] = datos['hora'].dt.strftime('%H:00')
     # Convertir a tipo float
    datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
    datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
