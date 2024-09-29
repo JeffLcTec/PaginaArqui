@@ -30,21 +30,24 @@ with col1:
 
 if on:
 
-    # Convertir las fechas seleccionadas a formato datetime
+   # Convertir las fechas seleccionadas a formato datetime
    fecha_seleccionada = pd.to_datetime(fecha_seleccionada).date()
  
-    
-    
     # Convertir la columna 'dia' a datetime para poder filtrar
    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
    datos['hora'] = pd.to_datetime(datos['hora'], format='%H:%M:%S').dt.time
     # Convertir a tipo float
    datos['temperatura'] = pd.to_numeric(datos['temperatura'], errors='coerce')
    datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
-    
+   
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
 
+   # Agrupar por hora y calcular el promedio de temperatura y humedad
+   datos_filtrados = datos_filtrados.groupby('hora').agg({
+        'temperatura': 'mean',
+        'humedad': 'mean'
+    }).reset_index()
     # Calcular el promedio de temperatura en el rango de fechas
    promedio_temperatura = datos_filtrados['temperatura'].mean()
    promedio_humedad = datos_filtrados['humedad'].mean()
@@ -106,7 +109,11 @@ else:
            datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
           
            datos_filtrados = datos[(datos['dia'] == fecha_seleccionada)]
-
+         # Agrupar por hora y calcular el promedio de temperatura y humedad
+           datos_filtrados = datos_filtrados.groupby('hora').agg({
+           'temperatura': 'mean',
+           'humedad': 'mean'
+           }).reset_index()
            promedio_temperatura = datos_filtrados['temperatura'].mean() 
              
               # Gráfico de Temperatura
