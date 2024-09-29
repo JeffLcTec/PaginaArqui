@@ -98,6 +98,11 @@ else:
             # Redondear las horas al inicio de cada hora
             datos_filtrados['hora'] = pd.to_datetime(datos_filtrados['hora'], format='%H:%M:%S', errors='coerce').dt.floor('H')
 
+            datos_promediados = datos_filtrados.groupby('hora').agg({
+                  'temperatura': 'mean',
+                  'humedad': 'mean'
+               }).reset_index()
+            
             # Gráfico de Temperatura
             fig_temp = go.Figure()
             fig_temp.add_trace(go.Scatter(x=datos_filtrados['hora'], y=datos_filtrados['temperatura'], mode='lines',
