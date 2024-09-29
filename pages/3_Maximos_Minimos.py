@@ -17,7 +17,7 @@ datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
 st.sidebar.title("Opciones de Selección")
 modo_seleccion = st.sidebar.radio("Selecciona cómo quieres ver los máximos y mínimos:", ("Por rango de días", "Por horas en un día"))
 col1,col2,col3 = st.columns([2, 3, 1]) 
-with col3:
+with col1:
    if st.button("Regresar"):
       st.switch_page("Inicio.py")
 # Opción 1: Por rango de días
