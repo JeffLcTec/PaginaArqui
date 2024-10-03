@@ -16,14 +16,14 @@ datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
 # Crear opciones en el sidebar
 st.sidebar.title("Opciones de Selección")
 modo_seleccion = st.sidebar.radio("Selecciona cómo quieres ver los máximos y mínimos:", ("Por rango de días", "Por horas en un día"))
-col1,col2,col3 = st.columns([2, 3, 1]) 
-with col1:
-   if st.button("Regresar"):
-      st.switch_page("Inicio.py")
+
 # Opción 1: Por rango de días
 if modo_seleccion == "Por rango de días":
     st.write('# Máximos y mínimos por rango de días')
-    
+    col1,col2,col3 = st.columns([2, 3, 1]) 
+    with col3:
+      if st.button("Regresar"):
+      st.switch_page("Inicio.py")
     # Cuadro de selección de Fecha de Inicio y Fin
     fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
     fecha_fin = st.selectbox("Seleccionar Fecha de Fin", datos['dia'].unique())
@@ -54,7 +54,10 @@ if modo_seleccion == "Por rango de días":
 # Opción 2: Por horas en un día específico
 elif modo_seleccion == "Por horas en un día":
     st.write('# Máximos y mínimos por horas en un día')
-
+    col1,col2,col3 = st.columns([2, 3, 1]) 
+    with col3:
+      if st.button("Regresar"):
+      st.switch_page("Inicio.py")
     # Selección de fecha
     fecha_seleccionada = st.selectbox("Seleccionar Día", datos['dia'].unique())
 
