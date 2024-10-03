@@ -15,8 +15,13 @@ datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
 # Cuadro de selección para Fecha de Inicio y Fin
 fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
 
+fecha_inicio = pd.to_datetime(fecha_inicio).date()
+datos['dia'] = pd.to_datetime(datos['dia']).dt.date
 # Selección de fecha de fin solo con las fechas filtradas
-fecha_fin = st.selectbox("Seleccionar Fecha de Fin", datos[(datos['dia'].unique() > fecha_inicio)])
+fechas_disponibles_fin = datos[datos['dia'] > fecha_inicio]['dia'].unique()
+
+# Selección de fecha de fin solo con las fechas filtradas
+fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_disponibles_fin)
 
 col1,col2,col3 = st.columns([2, 3, 1]) 
 with col3:
