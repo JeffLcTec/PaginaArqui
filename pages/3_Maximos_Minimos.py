@@ -26,7 +26,14 @@ if modo_seleccion == "Por rango de días":
           st.switch_page("Inicio.py")
     # Cuadro de selección de Fecha de Inicio y Fin
     fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
-    fecha_fin = st.selectbox("Seleccionar Fecha de Fin", datos['dia'].unique())
+    
+    fecha_inicio = pd.to_datetime(fecha_inicio).date()
+    datos['dia'] = pd.to_datetime(datos['dia']).dt.date
+    # Selección de fecha de fin solo con las fechas filtradas
+    fechas_disponibles_fin = datos[datos['dia'] > fecha_inicio]['dia'].unique()
+    
+    # Selección de fecha de fin solo con las fechas filtradas
+    fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_disponibles_fin)
     
     # Filtrar datos entre las fechas seleccionadas
     if pd.to_datetime(fecha_inicio) <= pd.to_datetime(fecha_fin):
