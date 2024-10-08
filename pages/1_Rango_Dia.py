@@ -29,7 +29,7 @@ with col3:
       st.switch_page("Inicio.py")
    
 with col1:
-   on = st.toggle("Ver Promedio")
+   on = st.toggle("Ver promedio")
 
 if on:
 
