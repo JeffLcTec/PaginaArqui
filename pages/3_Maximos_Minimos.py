@@ -44,9 +44,7 @@ if modo_seleccion == "Por rango de días":
             humedad=('humedad', 'mean')
         ).reset_index()
 
-        # Mostrar los promedios calculados antes de la tabla
-        st.write("Datos calculados para cada día (promedios):")
-        st.write(promedios_por_dia)
+       
         
         # Obtener los días con la temperatura y humedad máxima y mínima
         dia_max_temp = promedios_por_dia.loc[promedios_por_dia['temperatura'].idxmax()]
@@ -54,7 +52,7 @@ if modo_seleccion == "Por rango de días":
         dia_max_humedad = promedios_por_dia.loc[promedios_por_dia['humedad'].idxmax()]
         dia_min_humedad = promedios_por_dia.loc[promedios_por_dia['humedad'].idxmin()]
 
-        st.write(datos_filtrados)
+
         # Crear un DataFrame para mostrar estos datos
         resumen_rango = pd.DataFrame({
             'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
