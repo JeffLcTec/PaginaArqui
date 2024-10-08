@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 import json
-st.write('# Promedio por dia')
+st.write('# Promedio por día')
 archivo = pd.read_json("temperatura.json")
 datos = pd.json_normalize(archivo['datos'])
 fechas_df = datos[['dia']]
@@ -15,7 +15,7 @@ datos_sin_duplicados = datos.drop_duplicates(subset=['dia'])
 # Mostrar el DataFrame sin fechas duplicadas
 
    # Cuadro de selección para Fecha de Inicio
-fecha_seleccionada = st.selectbox("Seleccionar Fecha ", datos_sin_duplicados[['dia']])
+fecha_seleccionada = st.selectbox("Fecha ", datos_sin_duplicados[['dia']])
    
    # Cuadro de selección para Fecha de Fin
 
