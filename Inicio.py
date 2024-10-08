@@ -62,6 +62,6 @@ st.markdown("""
 # Créditos del equipo de desarrollo
 st.markdown("""
    
-    <p>&copy; 2024 Nombre del Proyecto</p>
+    <p>&copy; 2024 IoT </p>
     </footer>
     """, unsafe_allow_html=True)
