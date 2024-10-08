@@ -44,7 +44,7 @@ if modo_seleccion == "Por rango de días":
         dia_min_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmin()]
         dia_max_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmax()]
         dia_min_humedad = datos_filtrados.loc[datos_filtrados['humedad'].idxmin()]
-        st.write(dia_max_temp)
+        st.write(dia_min_temp)
         # Crear un DataFrame para mostrar estos datos
         resumen_rango = pd.DataFrame({
             'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
