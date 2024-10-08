@@ -57,7 +57,11 @@ if modo_seleccion == "Por rango de días":
         resumen_rango = pd.DataFrame({
             'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
             'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
-            'Valor': [dia_max_temp['temperatura'], dia_min_temp['temperatura'], dia_max_humedad['humedad'], dia_min_humedad['humedad']]
+            'Valor': [ 
+                round(dia_max_temp['temperatura_promedio'], 2),
+                round(dia_min_temp['temperatura_promedio'], 2),
+                round(dia_max_humedad['humedad_promedio'], 2),
+                round(dia_min_humedad['humedad_promedio'], 2)]
         })
 
         # Mostrar los datos en Streamlit
