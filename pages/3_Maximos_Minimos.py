@@ -49,10 +49,10 @@ if modo_seleccion == "Por rango de días":
         st.write(promedios_por_dia)
         
         # Obtener los días con la temperatura y humedad máxima y mínima
-        dia_max_temp = promedios_por_dia.loc[promedios_por_dia['temperatura_promedio'].idxmax()]
-        dia_min_temp = promedios_por_dia.loc[promedios_por_dia['temperatura_promedio'].idxmin()]
-        dia_max_humedad = promedios_por_dia.loc[promedios_por_dia['humedad_promedio'].idxmax()]
-        dia_min_humedad = promedios_por_dia.loc[promedios_por_dia['humedad_promedio'].idxmin()]
+        dia_max_temp = promedios_por_dia.loc[promedios_por_dia['temperatura'].idxmax()]
+        dia_min_temp = promedios_por_dia.loc[promedios_por_dia['temperatura'].idxmin()]
+        dia_max_humedad = promedios_por_dia.loc[promedios_por_dia['humedad'].idxmax()]
+        dia_min_humedad = promedios_por_dia.loc[promedios_por_dia['humedad'].idxmin()]
 
         st.write(datos_filtrados)
         # Crear un DataFrame para mostrar estos datos
