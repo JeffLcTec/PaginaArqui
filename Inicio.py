@@ -59,19 +59,9 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Créditos</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Incluye los estilos de tu página -->
-</head>
-<body>
-  <header>
+# Créditos del equipo de desarrollo
+st.markdown("""
     <h1>Créditos</h1>
-  </header>
-  <section>
     <h2>Equipo de Desarrollo</h2>
     <ul>
       <li><strong>Nombre Completo 1</strong> - Desarrollador Frontend</li>
@@ -80,16 +70,12 @@ st.markdown("""
       <li><strong>Nombre Completo 4</strong> - Gestión de Proyectos</li>
       <li><strong>Nombre Completo 5</strong> - Desarrollador Full Stack</li>
     </ul>
-  </section>
-  <section>
     <h2>Colaboradores Especiales</h2>
     <ul>
       <li><strong>Nombre Completo 6</strong> - Consultor de Seguridad</li>
       <li><strong>Nombre Completo 7</strong> - Pruebas y Calidad</li>
     </ul>
-  </section>
-  <footer>
+    <footer>
     <p>&copy; 2024 Nombre del Proyecto</p>
-  </footer>
-</body>
-</html>
+    </footer>
+    """, unsafe_allow_html=True)
