@@ -74,18 +74,18 @@ st.markdown("""
   <section>
     <h2>Equipo de Desarrollo</h2>
     <ul>
-      <li><strong>Nombre Completo 1</strong> – Desarrollador Frontend</li>
-      <li><strong>Nombre Completo 2</strong> – Desarrollador Backend</li>
-      <li><strong>Nombre Completo 3</strong> – Diseñador UI/UX</li>
-      <li><strong>Nombre Completo 4</strong> – Gestión de Proyectos</li>
-      <li><strong>Nombre Completo 5</strong> – Desarrollador Full Stack</li>
+      <li><strong>Nombre Completo 1</strong> - Desarrollador Frontend</li>
+      <li><strong>Nombre Completo 2</strong> - Desarrollador Backend</li>
+      <li><strong>Nombre Completo 3</strong> - Diseñador UI/UX</li>
+      <li><strong>Nombre Completo 4</strong> - Gestión de Proyectos</li>
+      <li><strong>Nombre Completo 5</strong> - Desarrollador Full Stack</li>
     </ul>
   </section>
   <section>
     <h2>Colaboradores Especiales</h2>
     <ul>
-      <li><strong>Nombre Completo 6</strong> – Consultor de Seguridad</li>
-      <li><strong>Nombre Completo 7</strong> – Pruebas y Calidad</li>
+      <li><strong>Nombre Completo 6</strong> - Consultor de Seguridad</li>
+      <li><strong>Nombre Completo 7</strong> - Pruebas y Calidad</li>
     </ul>
   </section>
   <footer>
