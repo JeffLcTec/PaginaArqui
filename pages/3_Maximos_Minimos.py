@@ -58,10 +58,10 @@ if modo_seleccion == "Por rango de días":
             'Día': [dia_max_temp['dia'], dia_min_temp['dia'], dia_max_humedad['dia'], dia_min_humedad['dia']],
             'Descripción': ['Temperatura Máxima', 'Temperatura Mínima', 'Humedad Máxima', 'Humedad Mínima'],
             'Valor': [ 
-                round(dia_max_temp['temperatura_promedio'], 2),
-                round(dia_min_temp['temperatura_promedio'], 2),
-                round(dia_max_humedad['humedad_promedio'], 2),
-                round(dia_min_humedad['humedad_promedio'], 2)]
+                round(dia_max_temp['temperatura'], 2),
+                round(dia_min_temp['temperatura'], 2),
+                round(dia_max_humedad['humedad'], 2),
+                round(dia_min_humedad['humedad'], 2)]
         })
 
         # Mostrar los datos en Streamlit
