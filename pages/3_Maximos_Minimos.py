@@ -14,7 +14,7 @@ datos['humedad'] = pd.to_numeric(datos['humedad'], errors='coerce')
 
 
 # Crear opciones en el sidebar
-st.sidebar.title("Opciones de Selección")
+st.sidebar.title("Opciones de selección")
 modo_seleccion = st.sidebar.radio("Selecciona cómo quieres ver los máximos y mínimos:", ("Por rango de días", "Por horas en un día"))
 
 # Opción 1: Por rango de días
@@ -25,7 +25,7 @@ if modo_seleccion == "Por rango de días":
       if st.button("Regresar"):
           st.switch_page("Inicio.py")
     # Cuadro de selección de Fecha de Inicio y Fin
-    fecha_inicio = st.selectbox("Seleccionar Fecha de Inicio", datos['dia'].unique())
+    fecha_inicio = st.selectbox("Fecha de inicio", datos['dia'].unique())
     
     fecha_inicio = pd.to_datetime(fecha_inicio).date()
     datos['dia'] = pd.to_datetime(datos['dia']).dt.date
@@ -33,7 +33,7 @@ if modo_seleccion == "Por rango de días":
     fechas_disponibles_fin = datos[datos['dia'] > fecha_inicio]['dia'].unique()
     
     # Selección de fecha de fin solo con las fechas filtradas
-    fecha_fin = st.selectbox("Seleccionar Fecha de Fin", fechas_disponibles_fin)
+    fecha_fin = st.selectbox("Fecha final", fechas_disponibles_fin)
     
     # Filtrar datos entre las fechas seleccionadas
     if pd.to_datetime(fecha_inicio) <= pd.to_datetime(fecha_fin):
