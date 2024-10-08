@@ -40,8 +40,8 @@ if modo_seleccion == "Por rango de días":
         datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
         # Agrupar por día y calcular la temperatura y humedad promedio
         promedios_por_dia = datos_filtrados.groupby('dia').agg(
-            temperatura_promedio=('temperatura', 'mean'),
-            humedad_promedio=('humedad', 'mean')
+            temperatura=('temperatura', 'mean'),
+            humedad=('humedad', 'mean')
         ).reset_index()
 
         # Mostrar los promedios calculados antes de la tabla
