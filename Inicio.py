@@ -23,7 +23,7 @@ st.markdown(
     }
     </style>
     <div class="titulo">
-        Monitoreo de Temperatura y Humedad
+        Monitoreo de temperatura y humedad
     </div>
     """, 
     unsafe_allow_html=True
