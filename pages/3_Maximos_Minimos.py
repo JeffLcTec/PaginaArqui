@@ -38,6 +38,15 @@ if modo_seleccion == "Por rango de días":
     # Filtrar datos entre las fechas seleccionadas
     if pd.to_datetime(fecha_inicio) <= pd.to_datetime(fecha_fin):
         datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
+        # Agrupar por día y calcular la temperatura y humedad promedio
+        promedios_por_dia = datos_filtrados.groupby('dia').agg(
+            temperatura_promedio=('temperatura', 'mean'),
+            humedad_promedio=('humedad', 'mean')
+        ).reset_index()
+
+        # Mostrar los promedios calculados antes de la tabla
+        st.write("Datos calculados para cada día (promedios):")
+        st.write(promedios_por_dia)
         
         # Obtener los días con la temperatura y humedad máxima y mínima
         dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
