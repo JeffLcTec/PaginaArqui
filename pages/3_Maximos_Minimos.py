@@ -37,7 +37,7 @@ if modo_seleccion == "Por rango de días":
     
     # Filtrar datos entre las fechas seleccionadas
     if pd.to_datetime(fecha_inicio) <= pd.to_datetime(fecha_fin):
-        datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
+        datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)].unique()
         
         # Obtener los días con la temperatura y humedad máxima y mínima
         dia_max_temp = datos_filtrados.loc[datos_filtrados['temperatura'].idxmax()]
