@@ -48,7 +48,7 @@ if on:
     # Filtrar los datos según el rango de fechas
    datos_filtrados = datos[(datos['dia'] >= fecha_inicio) & (datos['dia'] <= fecha_fin)]
    # Agrupar por 'dia' y calcular el promedio de temperatura y humedad
-
+   st.write(datos_filtrados)
    datos_filtrados = datos_filtrados.groupby('dia').agg({
       'temperatura': 'mean',
       'humedad': 'mean'
