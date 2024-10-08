@@ -61,21 +61,7 @@ st.markdown("""
 
 # Créditos del equipo de desarrollo
 st.markdown("""
-    <h1>Créditos</h1>
-    <h2>Equipo de Desarrollo</h2>
-    <ul>
-      <li><strong>Nombre Completo 1</strong> - Desarrollador Frontend</li>
-      <li><strong>Nombre Completo 2</strong> - Desarrollador Backend</li>
-      <li><strong>Nombre Completo 3</strong> - Diseñador UI/UX</li>
-      <li><strong>Nombre Completo 4</strong> - Gestión de Proyectos</li>
-      <li><strong>Nombre Completo 5</strong> - Desarrollador Full Stack</li>
-    </ul>
-    <h2>Colaboradores Especiales</h2>
-    <ul>
-      <li><strong>Nombre Completo 6</strong> - Consultor de Seguridad</li>
-      <li><strong>Nombre Completo 7</strong> - Pruebas y Calidad</li>
-    </ul>
-    <footer>
+   
     <p>&copy; 2024 Nombre del Proyecto</p>
     </footer>
     """, unsafe_allow_html=True)
