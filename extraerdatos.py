@@ -1,12 +1,8 @@
 import requests
 import json
 
-# Reemplaza con tu API_KEY de lectura y el ID del canal
-channel_id = '2665378'
-api_key = '5VXSRHWA713VW8JR'
-
-# URL de la API de ThingSpeak para obtener los datos del campo 1 (por ejemplo)
-url = f'https://api.thingspeak.com/channels/{channel_id}/feeds.json?api_key={api_key}&results='
+# URL de la API de FireBase para obtener los datos del campo 1 (por ejemplo)
+url = "https://iotproject-45a5c-default-rtdb.firebaseio.com/datos.json?auth=g6QDgZRCchCTsIiCWUAS2Wv1Von3W37rvU4ADer9"
 
 # Realizamos la solicitud HTTP GET
 response = requests.get(url)
